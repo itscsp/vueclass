@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Vue Class</title>
+</head>
+<body>
+
+    <h1>Hello, Vue :)</h1>
+
+    <div id="app">
+        <div v-if="showbooks">
+            <h2>{{title}} - {{author}} - {{age}}</h2>
+        </div>
+
+        <button v-on:click="age++">Increase Age</button>
+        <button v-on:click="age--">decrese Age</button>
+
+        <div @click="changeTitle('wings of fire')"> click me to change book title</div>
+
+
+        <button @click="toggleShowbooks">
+            <span v-if="showbooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
+
+        <div v-show="showbooks">Currently showing book</div>
+
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
